@@ -1,0 +1,16 @@
+numpy
+scipy
+datasets
+huggingface_hub
+pyarrow
+soundfile
+librosa
+audioread
+webdataset
+torch
+torchaudio
+scikit-learn
+tqdm
+pyyaml
+pandas
+joblib
