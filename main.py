@@ -1,6 +1,5 @@
-def main():
-    print("Hello from speaker-type-classifier!")
-
+from src.speaker_type_classifier.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 
 if __name__ == "__main__":
-    main()
+    DataIngestionPipeline().run()
+

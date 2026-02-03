@@ -26,6 +26,10 @@ list_of_files = [
     f"src/{package_name}/entity/config_entity.py",
     f"src/{package_name}/entity/artifact_entity.py",
 
+    # Configuration
+    f"src/{package_name}/config/__init__.py",
+    f"src/{package_name}/config/configuration.py",
+
     # Logging + exceptions
     f"src/{package_name}/logging/__init__.py",
     f"src/{package_name}/logging/logger.py",

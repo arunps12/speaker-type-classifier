@@ -15,3 +15,5 @@ pyyaml
 pandas
 joblib
 logging
+pandas
+pyyaml

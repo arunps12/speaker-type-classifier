@@ -1,0 +1,16 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  manifest_path: /scratch/users/arunps/speaker-type-classifier/data_hf/export/v1/master_manifest_v1.jsonl
+  run_root: artifacts/runs
+  output_dirname: data_ingestion
+  train_filename: train.csv
+  val_filename: val.csv
+  metadata_filename: metadata.json
+
+  val_size: 0.20
+  seed: 42
+  stratify: true
+
+  #  drop rows if audio file missing
+  drop_missing_audio: true
