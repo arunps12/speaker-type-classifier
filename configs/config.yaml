@@ -14,3 +14,12 @@ data_ingestion:
 
   #  drop rows if audio file missing
   drop_missing_audio: true
+
+data_validation:
+  schema_path: configs/schema.yaml
+  run_root: artifacts/runs
+  output_dirname: data_validation
+  report_filename: validation_report.json
+  issues_filename: validation_issues.csv
+
+  fail_fast: false

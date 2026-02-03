@@ -1,0 +1,24 @@
+{
+  "stage": "data_validation",
+  "schema_path": "configs/schema.yaml",
+  "ingestion_run_dir": "artifacts/runs/data_ingestion/run_20260203_153345",
+  "train_csv": "artifacts/runs/data_ingestion/run_20260203_153345/train.csv",
+  "val_csv": "artifacts/runs/data_ingestion/run_20260203_153345/val.csv",
+  "n_train": 54068,
+  "n_val": 13517,
+  "train_label_counts": {
+    "adult_female": 16000,
+    "adult_male": 16000,
+    "background": 11361,
+    "child": 10707
+  },
+  "val_label_counts": {
+    "adult_female": 4000,
+    "adult_male": 4000,
+    "background": 2840,
+    "child": 2677
+  },
+  "n_issues": 0,
+  "fatal_errors": [],
+  "is_valid": true
+}

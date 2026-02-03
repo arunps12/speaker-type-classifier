@@ -63,6 +63,7 @@ list_of_files = [
 
     # Configs
     "configs/config.yaml",
+    "configs/schema.yaml",
     "configs/params.yaml",
 
     # Artifacts (runtime outputs)

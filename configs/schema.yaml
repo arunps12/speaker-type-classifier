@@ -1,0 +1,32 @@
+dataset:
+  allowed_labels:
+    - adult_male
+    - adult_female
+    - child
+    - background
+
+required_columns:
+  - audio_path
+  - label
+  - source
+  - speaker_id
+  - meta
+
+checks:
+  no_nulls_in:
+    - audio_path
+    - label
+    - source
+
+  # if true, will fail validation if the wav path doesn't exist
+  audio_path_must_exist: true
+
+  # if true, will flag duplicate audio paths across train/val
+  no_duplicates_audio_path: true
+
+  # optional: ensure each class is present in each split
+  require_all_labels_in_each_split: false
+
+thresholds:
+  min_rows_per_class_train: 100
+  min_rows_per_class_val: 10

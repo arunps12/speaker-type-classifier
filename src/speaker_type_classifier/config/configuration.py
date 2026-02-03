@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 from src.speaker_type_classifier.utils.common import read_yaml
-from src.speaker_type_classifier.entity.config_entity import DataIngestionConfig
+from src.speaker_type_classifier.entity.config_entity import DataIngestionConfig, DataValidationConfig
 from src.speaker_type_classifier.constant.constants import CONFIG_FILE_PATH
 
 
@@ -55,3 +55,16 @@ class ConfigurationManager:
         Useful for debugging/logging or dumping config snapshots.
         """
         return self.config
+
+
+
+    def get_data_validation_config(self) -> DataValidationConfig:
+        cfg = self._require("data_validation")
+        return DataValidationConfig(
+            schema_path=Path(cfg["schema_path"]),
+            run_root=Path(cfg.get("run_root", "artifacts/runs")),
+            output_dirname=str(cfg.get("output_dirname", "data_validation")),
+            report_filename=str(cfg.get("report_filename", "validation_report.json")),
+            issues_filename=str(cfg.get("issues_filename", "validation_issues.csv")),
+            fail_fast=bool(cfg.get("fail_fast", False)),
+        )
