@@ -23,3 +23,36 @@ data_validation:
   issues_filename: validation_issues.csv
 
   fail_fast: false
+
+data_transformation:
+  run_root: artifacts/runs
+  output_dirname: data_transformation
+
+  # Big feature store root on scratch:
+  feature_store_root: /scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1
+
+  report_filename: transformation_report.json
+  pointers_filename: pointers.json
+
+  feature_types:
+    - egemaps
+    - wav2vec2
+    - hubert
+
+  # Audio settings
+  target_sr: 16000
+  max_seconds: 10.0
+  seed: 42
+
+  # OpenSMILE
+  egemaps_dim: 88
+
+  # HF models
+  wav2vec2_model_name: facebook/wav2vec2-base
+  hubert_model_name: facebook/hubert-base-ls960
+  pooling: mean
+
+  # GPU controls
+  device: cuda           # cuda|cpu|auto
+  hf_batch_size: 16      # batch size for hf model inference
+  hf_use_fp16: true      # fp16 autocast on cuda

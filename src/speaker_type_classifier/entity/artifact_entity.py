@@ -20,3 +20,15 @@ class DataValidationArtifact:
     is_valid: bool
     n_train: int
     n_val: int
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict
+
+
+@dataclass(frozen=True)
+class DataTransformationArtifact:
+    run_dir: Path
+    report_json: Path
+    pointers_json: Path
+    feature_runs: Dict[str, str]  # feature_type -> feature_store_run_dir

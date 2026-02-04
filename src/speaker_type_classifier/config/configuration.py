@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 from src.speaker_type_classifier.utils.common import read_yaml
-from src.speaker_type_classifier.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from src.speaker_type_classifier.entity.config_entity import DataIngestionConfig, DataValidationConfig , DataTransformationConfig
 from src.speaker_type_classifier.constant.constants import CONFIG_FILE_PATH
 
 
@@ -68,3 +68,32 @@ class ConfigurationManager:
             issues_filename=str(cfg.get("issues_filename", "validation_issues.csv")),
             fail_fast=bool(cfg.get("fail_fast", False)),
         )
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        cfg = self._require("data_transformation")
+        return DataTransformationConfig(
+            run_root=Path(cfg.get("run_root", "artifacts/runs")),
+            output_dirname=str(cfg.get("output_dirname", "data_transformation")),
+
+            feature_store_root=Path(cfg["feature_store_root"]),
+
+            report_filename=str(cfg.get("report_filename", "transformation_report.json")),
+            pointers_filename=str(cfg.get("pointers_filename", "pointers.json")),
+
+            feature_types=list(cfg.get("feature_types", ["egemaps"])),
+
+            target_sr=int(cfg.get("target_sr", 16000)),
+            max_seconds=float(cfg.get("max_seconds", 10.0)),
+            seed=int(cfg.get("seed", 42)),
+
+            egemaps_dim=int(cfg.get("egemaps_dim", 88)),
+
+            wav2vec2_model_name=str(cfg.get("wav2vec2_model_name", "facebook/wav2vec2-base")),
+            hubert_model_name=str(cfg.get("hubert_model_name", "facebook/hubert-base-ls960")),
+            pooling=str(cfg.get("pooling", "mean")),
+
+            device=str(cfg.get("device", "cuda")),
+            hf_batch_size=int(cfg.get("hf_batch_size", 16)),
+            hf_use_fp16=bool(cfg.get("hf_use_fp16", True)),
+        )
+
