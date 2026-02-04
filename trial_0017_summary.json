@@ -1,0 +1,21 @@
+{
+  "trial_id": 17,
+  "mode": "cuda",
+  "train_time_sec": 12.755396127700806,
+  "metrics": {
+    "accuracy": 0.94118517422505,
+    "uar_macro_recall": 0.933274780406383,
+    "macro_f1": 0.9329574439747749
+  },
+  "params": {
+    "n_estimators": 600,
+    "learning_rate": 0.03,
+    "max_depth": 8,
+    "min_child_weight": 2,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0,
+    "gamma": 0.0,
+    "reg_lambda": 10.0,
+    "reg_alpha": 0.5
+  }
+}
