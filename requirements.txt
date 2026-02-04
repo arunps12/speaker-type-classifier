@@ -16,3 +16,5 @@ torchaudio
 scikit-learn
 tqdm
 pyyaml
+protobuf
+sentencepiece
