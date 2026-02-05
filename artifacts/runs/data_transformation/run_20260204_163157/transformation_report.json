@@ -1,0 +1,26 @@
+{
+  "stage": "data_transformation",
+  "ingestion_run_dir": "artifacts/runs/data_ingestion/run_20260204_163155",
+  "run_dir": "artifacts/runs/data_transformation/run_20260204_163157",
+  "feature_store_root": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1",
+  "feature_types": [
+    "egemaps",
+    "wav2vec2",
+    "hubert"
+  ],
+  "target_sr": 16000,
+  "max_seconds": 10.0,
+  "device": "cuda",
+  "hf_batch_size": 16,
+  "hf_use_fp16": true,
+  "pooling": "mean",
+  "egemaps_dims": 88,
+  "egemaps_train_rows": 54068,
+  "egemaps_val_rows": 13517,
+  "wav2vec2_dims": 768,
+  "wav2vec2_train_rows": 54068,
+  "wav2vec2_val_rows": 13517,
+  "hubert_dims": 768,
+  "hubert_train_rows": 54068,
+  "hubert_val_rows": 13517
+}

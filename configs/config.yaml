@@ -35,8 +35,8 @@ data_transformation:
   pointers_filename: pointers.json
 
   feature_types:
-    #- egemaps
-    #- wav2vec2
+    - egemaps
+    - wav2vec2
     - hubert
 
   # Audio settings

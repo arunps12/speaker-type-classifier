@@ -1,0 +1,53 @@
+{
+  "egemaps": {
+    "store_run_dir": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157",
+    "train_X": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157/train_X.npy",
+    "train_y": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157/train_y.npy",
+    "val_X": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157/val_X.npy",
+    "val_y": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157/val_y.npy",
+    "train_index": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157/train_index.csv",
+    "val_index": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/egemaps/run_20260204_163157/val_index.csv",
+    "X_train_shape": [
+      54068,
+      88
+    ],
+    "X_val_shape": [
+      13517,
+      88
+    ]
+  },
+  "wav2vec2": {
+    "store_run_dir": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157",
+    "train_X": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157/train_X.npy",
+    "train_y": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157/train_y.npy",
+    "val_X": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157/val_X.npy",
+    "val_y": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157/val_y.npy",
+    "train_index": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157/train_index.csv",
+    "val_index": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/wav2vec2/run_20260204_163157/val_index.csv",
+    "X_train_shape": [
+      54068,
+      768
+    ],
+    "X_val_shape": [
+      13517,
+      768
+    ]
+  },
+  "hubert": {
+    "store_run_dir": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157",
+    "train_X": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157/train_X.npy",
+    "train_y": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157/train_y.npy",
+    "val_X": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157/val_X.npy",
+    "val_y": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157/val_y.npy",
+    "train_index": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157/train_index.csv",
+    "val_index": "/scratch/users/arunps/speaker-type-classifier/artifacts_feature_store/v1/hubert/run_20260204_163157/val_index.csv",
+    "X_train_shape": [
+      54068,
+      768
+    ],
+    "X_val_shape": [
+      13517,
+      768
+    ]
+  }
+}
