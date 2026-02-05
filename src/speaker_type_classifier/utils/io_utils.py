@@ -14,6 +14,10 @@ def read_jsonl(path: Path) -> Iterator[Dict[str, Any]]:
                 continue
             yield json.loads(line)
 
+def read_json(path: Path) -> Dict[str, Any]:
+    path = Path(path)
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
 
 def write_json(path: Path, obj: Any) -> None:
     path = Path(path)

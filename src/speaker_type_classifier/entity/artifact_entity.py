@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict, Any
 
 @dataclass(frozen=True)
 class DataIngestionArtifact:
@@ -32,3 +32,12 @@ class DataTransformationArtifact:
     report_json: Path
     pointers_json: Path
     feature_runs: Dict[str, str]  # feature_type -> feature_store_run_dir
+
+
+@dataclass(frozen=True)
+class ModelTrainerArtifact:
+    run_dir: Path
+    model_path: Path
+    metrics_path: Path
+    feature_type: str
+    transformation_run_id: str

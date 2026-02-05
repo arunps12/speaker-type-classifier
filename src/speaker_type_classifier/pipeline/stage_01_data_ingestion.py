@@ -12,3 +12,15 @@ class DataIngestionPipeline:
         artifact = DataIngestion(config).run()
         logger.info(f"Stage 01 completed. Run dir: {artifact.run_dir}")
         return artifact
+
+
+def run():
+    return DataIngestionPipeline().run()
+
+
+def main():
+    run()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,19 @@
+model_trainer:
+  model_type: xgboost
+  num_classes: 4
+
+  xgboost:
+    objective: multi:softprob
+    num_class: 4
+    eval_metric: mlogloss
+    tree_method: hist
+
+    n_estimators: 400
+    learning_rate: 0.1
+    max_depth: 10
+    min_child_weight: 8
+    subsample: 1.0
+    colsample_bytree: 0.7
+    gamma: 0.0
+    reg_lambda: 10.0
+    reg_alpha: 0.0

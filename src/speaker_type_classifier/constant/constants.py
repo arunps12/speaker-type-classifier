@@ -15,3 +15,6 @@ LABEL2ID = {
 }
 
 ID2LABEL = {v: k for k, v in LABEL2ID.items()}
+
+PARAMS_FILE_PATH = Path("configs/params.yaml")
+MODELS_DIR = Path("models")

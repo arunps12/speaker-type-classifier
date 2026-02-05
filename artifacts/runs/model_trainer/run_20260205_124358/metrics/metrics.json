@@ -1,0 +1,46 @@
+{
+  "stage": "model_trainer",
+  "feature_type": "egemaps",
+  "transformation_run_id": "run_20260204_163157",
+  "train_time_sec": 7.843665838241577,
+  "metrics": {
+    "accuracy": 0.9471776281719316,
+    "uar_macro_recall": 0.9392950857460791,
+    "macro_f1": 0.9394846794236279,
+    "per_class": [
+      {
+        "label_id": 0,
+        "label": "adult_male",
+        "support": 4000,
+        "precision": 0.9798155993022676,
+        "recall": 0.983,
+        "f1": 0.9814052165231499
+      },
+      {
+        "label_id": 1,
+        "label": "adult_female",
+        "support": 4000,
+        "precision": 0.9802598700649675,
+        "recall": 0.98075,
+        "f1": 0.9805048737815546
+      },
+      {
+        "label_id": 2,
+        "label": "child",
+        "support": 2677,
+        "precision": 0.9000754147812972,
+        "recall": 0.8916697796040344,
+        "f1": 0.8958528804653781
+      },
+      {
+        "label_id": 3,
+        "label": "background",
+        "support": 2840,
+        "precision": 0.8985964912280702,
+        "recall": 0.9017605633802817,
+        "f1": 0.9001757469244288
+      }
+    ]
+  },
+  "xgboost_params": {}
+}

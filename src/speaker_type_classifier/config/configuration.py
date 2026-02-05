@@ -5,8 +5,8 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 from src.speaker_type_classifier.utils.common import read_yaml
-from src.speaker_type_classifier.entity.config_entity import DataIngestionConfig, DataValidationConfig , DataTransformationConfig
-from src.speaker_type_classifier.constant.constants import CONFIG_FILE_PATH
+from src.speaker_type_classifier.entity.config_entity import DataIngestionConfig, DataValidationConfig , DataTransformationConfig, ModelTrainerConfig
+from src.speaker_type_classifier.constant.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 
 
 class ConfigurationManager:
@@ -17,7 +17,7 @@ class ConfigurationManager:
     def __init__(self, config_filepath: Path = CONFIG_FILE_PATH):
         self.config_filepath = Path(config_filepath)
         self.config: Dict[str, Any] = read_yaml(self.config_filepath)
-
+        self.params: Dict[str, Any] = read_yaml(PARAMS_FILE_PATH)
     def _require(self, key: str) -> Any:
         if key not in self.config:
             raise KeyError(f"Missing required top-level key in config.yaml: '{key}'")
@@ -97,3 +97,38 @@ class ConfigurationManager:
             hf_use_fp16=bool(cfg.get("hf_use_fp16", True)),
         )
 
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        cfg = self._require("model_trainer")
+
+        return ModelTrainerConfig(
+            run_root=Path(cfg.get("run_root", "artifacts/runs")),
+            output_dirname=str(cfg.get("output_dirname", "model_trainer")),
+
+            feature_type=str(cfg.get("feature_type", "egemaps")),
+
+            transformation_stage_dir=Path(cfg.get("transformation_stage_dir", "artifacts/runs/data_transformation")),
+            transformation_report_filename=str(cfg.get("transformation_report_filename", "transformation_report.json")),
+            use_latest_transformation_run=bool(cfg.get("use_latest_transformation_run", True)),
+            pinned_transformation_run_id=cfg.get("pinned_transformation_run_id", None),
+
+            model_subdir=str(cfg.get("model_subdir", "model")),
+            metrics_subdir=str(cfg.get("metrics_subdir", "metrics")),
+            model_filename=str(cfg.get("model_filename", "model.pkl")),
+
+            save_to_models_dir=bool(cfg.get("save_to_models_dir", True)),
+            models_root=Path(cfg.get("models_root", "models")),
+            models_filename=str(cfg.get("models_filename", "model.pkl")),
+
+            use_gpu=bool(cfg.get("use_gpu", True)),
+            cpu_n_jobs=int(cfg.get("cpu_n_jobs", 16)),
+            seed=int(cfg.get("seed", 42)),
+        )
+    
+    def get_model_trainer_params(self) -> Dict[str, Any]:
+        """
+        Return Model Trainer parameters from params.yaml.
+        """
+        if "model_trainer" not in self.params:
+            raise KeyError("Missing 'model_trainer' section in params.yaml")
+
+        return self.params["model_trainer"]

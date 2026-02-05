@@ -56,3 +56,31 @@ data_transformation:
   device: cuda           # cuda|cpu|auto
   hf_batch_size: 16      # batch size for hf model inference
   hf_use_fp16: true      # fp16 autocast on cuda
+
+model_trainer:
+  run_root: artifacts/runs
+  output_dirname: model_trainer
+
+  
+  feature_type: egemaps   # egemaps | wav2vec2 | hubert
+
+  
+  transformation_stage_dir: artifacts/runs/data_transformation
+  transformation_report_filename: transformation_report.json
+  use_latest_transformation_run: true
+  pinned_transformation_run_id: null     # e.g. "run_20260204_163157" to freeze
+
+  
+  model_subdir: model
+  metrics_subdir: metrics
+  model_filename: xgb_egemaps.pkl
+
+  
+  save_to_models_dir: true
+  models_root: models
+  models_filename: xgb_egemaps.pkl
+
+  
+  use_gpu: true
+  cpu_n_jobs: 16
+  seed: 42

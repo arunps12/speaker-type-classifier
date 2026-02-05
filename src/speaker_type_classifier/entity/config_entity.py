@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List
+from typing import List, Optional
+
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
@@ -50,3 +51,28 @@ class DataTransformationConfig:
     device: str
     hf_batch_size: int
     hf_use_fp16: bool
+
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    run_root: Path
+    output_dirname: str
+
+    feature_type: str
+
+    transformation_stage_dir: Path
+    transformation_report_filename: str
+    use_latest_transformation_run: bool
+    pinned_transformation_run_id: Optional[str]
+
+    model_subdir: str
+    metrics_subdir: str
+    model_filename: str
+
+    save_to_models_dir: bool
+    models_root: Path
+    models_filename: str
+
+    use_gpu: bool
+    cpu_n_jobs: int
+    seed: int
